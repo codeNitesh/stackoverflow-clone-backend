@@ -5,6 +5,7 @@ const passport = require("passport");
 const { MONGODB_URI } = require("./config/config");
 const authRoutes = require("./routes/authRoute");
 const questionRoutes = require("./routes/questionRoute");
+const answerRoutes = require("./routes/answerRoute");
 const authenticate = require("./middleware/authenticate");
 require("./config/passport");
 
@@ -24,6 +25,7 @@ app.use(passport.initialize());
 
 app.use("/auth", authRoutes);
 app.use("/questions", questionRoutes);
+app.use("/answers", answerRoutes);
 
 const port = process.env.PORT || 3000;
 
