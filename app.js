@@ -6,6 +6,8 @@ const { MONGODB_URI } = require("./config/config");
 const authRoutes = require("./routes/authRoute");
 const questionRoutes = require("./routes/questionRoute");
 const answerRoutes = require("./routes/answerRoute");
+const tagRoutes = require("./routes/tagRoute");
+
 const authenticate = require("./middleware/authenticate");
 require("./config/passport");
 
@@ -22,10 +24,10 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 // app.use(authenticate)
 
-
 app.use("/auth", authRoutes);
 app.use("/questions", questionRoutes);
 app.use("/answers", answerRoutes);
+app.use("/tags", tagRoutes);
 
 const port = process.env.PORT || 3000;
 
