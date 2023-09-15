@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const { MONGODB_URI } = require("./config/config");
 const authRoutes = require("./routes/authRoute");
+const questionRoutes = require("./routes/questionRoute");
 const authenticate = require("./middleware/authenticate");
 require("./config/passport");
 
@@ -20,7 +21,9 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 // app.use(authenticate)
 
+
 app.use("/auth", authRoutes);
+app.use("/questions", questionRoutes);
 
 const port = process.env.PORT || 3000;
 
