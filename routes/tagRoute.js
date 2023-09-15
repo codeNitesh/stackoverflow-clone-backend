@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const TagAPI = require("../api/tags");
+const TagAPI = require("../apis/tagAPI");
+const passport = require("passport");
 
 // Create a new tag
 router.post(

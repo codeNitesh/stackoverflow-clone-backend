@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const AnswerAPI = require("../api/answers");
+const AnswerAPI = require("../apis/answerAPI");
 
 // Create a new answer of given question
 router.post(

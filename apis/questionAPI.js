@@ -37,7 +37,15 @@ async function getQuestionById(req, res) {
     if (!question) {
       return res.status(404).json({ error: "Question not found" });
     }
-    res.json(question);
+    // Check if the user is the author of the question
+    if (question.author.toString() !== userId.toString()) {
+      return res.status(403).json({ error: "Unauthorized" });
+    }
+
+    // Delete the question
+    await question.remove();
+
+    res.json({ message: "Question deleted successfully" });
   } catch (err) {
     console.error(err);
     res
@@ -50,6 +58,19 @@ async function getQuestionById(req, res) {
 async function updateQuestionById(req, res) {
   try {
     const { title, body, tags } = req.body;
+
+    const userId = req.user._id;
+    const question = await Question.findById(req.params.id);
+
+    if (!question) {
+      return res.status(404).json({ error: "Question not found" });
+    }
+
+    // Check if the user is the author of the question
+    if (question.author.toString() !== userId.toString()) {
+      return res.status(403).json({ error: "Unauthorized" });
+    }
+
     const updatedQuestion = await Question.findByIdAndUpdate(
       req.params.id,
       { title, body, tags },
