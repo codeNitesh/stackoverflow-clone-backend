@@ -29,4 +29,7 @@ const questionSchema = new mongoose.Schema({
   },
 });
 
+// Search functionality -> index on title and tags
+questionSchema.index({ title: "text", tags: "text" });
+
 module.exports = mongoose.model("Question", questionSchema);
