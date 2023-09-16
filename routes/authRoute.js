@@ -24,7 +24,7 @@ authRoute.post("/login", (req, res, next) => {
     if (!user) return res.status(401).json(info);
 
     const apiToken = generateToken(user);
-    res.json({ apiToken });
+    res.json({ apiToken, user });
   })(req, res, next);
 });
 

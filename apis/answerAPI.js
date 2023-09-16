@@ -125,6 +125,7 @@ async function markAnswerAsAccepted(req, res) {
     }
 
     // Check if the user is the author of the question
+    console.log(question.author.toString(),  userId.toString())
     if (question.author.toString() !== userId.toString()) {
       return res.status(403).json({ error: "Unauthorized" });
     }

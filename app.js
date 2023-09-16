@@ -8,6 +8,7 @@ const questionRoutes = require("./routes/questionRoute");
 const answerRoutes = require("./routes/answerRoute");
 const tagRoutes = require("./routes/tagRoute");
 const searchRoutes = require("./routes/searchRoute");
+const cors = require('cors');
 
 const authenticate = require("./middleware/authenticate");
 require("./config/passport");
@@ -20,7 +21,11 @@ mongoose.connect(MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
+app.use(cors());
+
+
 // Middleware
+app.use(cors());
 app.use(bodyParser.json());
 app.use(passport.initialize());
 // app.use(authenticate)

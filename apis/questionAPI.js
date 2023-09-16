@@ -37,15 +37,7 @@ async function getQuestionById(req, res) {
     if (!question) {
       return res.status(404).json({ error: "Question not found" });
     }
-    // Check if the user is the author of the question
-    if (question.author.toString() !== userId.toString()) {
-      return res.status(403).json({ error: "Unauthorized" });
-    }
-
-    // Delete the question
-    await question.remove();
-
-    res.json({ message: "Question deleted successfully" });
+    res.json(question);
   } catch (err) {
     console.error(err);
     res
@@ -53,6 +45,7 @@ async function getQuestionById(req, res) {
       .json({ error: "An error occurred while fetching the question" });
   }
 }
+
 
 // Update a question by ID
 async function updateQuestionById(req, res) {
