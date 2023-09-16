@@ -23,13 +23,13 @@ To begin using this backend application, make sure you have Node.js and npm (Nod
 1. Clone this repository to your local machine:
 
    ```sh
-   git clone stackoverflow-clone-backend
+   git clone https://github.com/codeNitesh/stackoverflow-clone-backend
    ```
 
 2. Navigate to the project directory:
 
    ```sh
-   cd https://github.com/codeNitesh/stackoverflow-clone-backend
+   cd stackoverflow-clone-backend
    ```
 
 3. Install the required dependencies:
