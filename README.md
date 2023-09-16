@@ -23,7 +23,7 @@ To begin using this backend application, make sure you have Node.js and npm (Nod
 1. Clone this repository to your local machine:
 
    ```sh
-   git clone <repository-url>
+   git clone stackoverflow-clone-backend
    ```
 
 2. Navigate to the project directory:
