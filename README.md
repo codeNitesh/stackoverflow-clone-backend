@@ -86,13 +86,13 @@ This application provides a range of API routes for different functionalities. B
 
 ## Usage
 
-To utilize the API endpoints provided by this backend application, you can make HTTP requests using tools like Postman or integrate them into your frontend application.
+To utilize the API endpoints provided by this backend application, can make HTTP requests using tools like Postman or integrate them into the frontend application.
 
-Please ensure that you handle authentication correctly when accessing protected routes. (Passing Auth Token)
+Please ensure to handle authentication correctly when accessing protected routes. (Passing Auth Token)
 
 ## Authentication
 
-This application employs JWT (JSON Web Tokens) for authentication. To access protected routes, include the JWT token in the `Authorization` header of your HTTP requests.
+This application employs JWT (JSON Web Tokens) for authentication. To access protected routes, include the JWT token in the `Authorization` header of HTTP requests.
 
 ## Contributing
 
