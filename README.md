@@ -37,8 +37,13 @@ To begin using this backend application, make sure you have Node.js and npm (Nod
    ```sh
    npm install
    ```
-
-4. Start the server:
+   
+4. Setup Database:
+   ```sh
+   UPDATE MONGODB_URI in config file
+   ```
+   
+5. Start the server:
 
    ```sh
    npm start
